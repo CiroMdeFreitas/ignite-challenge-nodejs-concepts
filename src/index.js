@@ -63,7 +63,7 @@ app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
   user.todos.forEach(todo => {
     if(id === todo.id) {
       todo.title = title;
-      todo.deadline = deadline;
+      todo.deadline = new Date(deadline);
 
       return response.status(201).send();
     }
