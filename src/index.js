@@ -22,7 +22,7 @@ function checksExistsUserAccount(request, response, next) {
 }
 
 app.post('/users', (request, response) => {
-  const { name, username } =  request.headers;
+  const { name, username } =  request.body;
 
   users.push({
     id: uuidv4(),
@@ -41,7 +41,7 @@ app.get('/todos', checksExistsUserAccount, (request, response) => {
 });
 
 app.post('/todos', checksExistsUserAccount, (request, response) => {
-  const { title, deadline } = request.headers;
+  const { title, deadline } = request.body;
   const { user } = request;
 
   user.todos.push({
