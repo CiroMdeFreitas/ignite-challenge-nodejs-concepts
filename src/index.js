@@ -77,14 +77,14 @@ app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
 });
 
 app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
-  const { id } = request.headers;
+  const { id } = request.params;
   const { user } = request;
 
   user.todos.forEach(todo => {
     if(id === todo.id) {
       todo.done = true;
 
-      return response.status(201).send();
+      return response.status(201).json(todo);
     }
   });
 
