@@ -61,7 +61,7 @@ app.post('/todos', checksExistsUserAccount, (request, response) => {
 
 app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
   const { title, deadline } = request.body;
-  const { id } = request.headers;
+  const { id } = request.params;
   const { user } = request;
 
   user.todos.forEach(todo => {
@@ -69,7 +69,7 @@ app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
       todo.title = title;
       todo.deadline = new Date(deadline);
 
-      return response.status(201).send();
+      return response.status(201).json(todo);
     }
   });
 
