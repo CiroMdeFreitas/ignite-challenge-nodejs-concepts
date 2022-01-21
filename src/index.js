@@ -56,7 +56,7 @@ app.post('/todos', checksExistsUserAccount, (request, response) => {
     created_at: new Date()
   });
 
-  return response.status(201).send();
+  return response.status(201).json(user.todos[user.todos.length - 1]);
 });
 
 app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
