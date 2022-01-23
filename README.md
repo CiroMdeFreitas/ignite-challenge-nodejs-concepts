@@ -10,4 +10,4 @@
 
 ## Disclaimer
 
-    All code present on the initial commit was provided by the course as this exercise is meant for students, here it's repository link: https://github.com/rocketseat-education/ignite-template-conceitos-do-nodejs.
+    All code present on the initial commit was provided by the course as this exercise is meant for students, here the template's repository link: https://github.com/rocketseat-education/ignite-template-conceitos-do-nodejs.
